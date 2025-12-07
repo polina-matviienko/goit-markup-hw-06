@@ -154,7 +154,7 @@ input {
 
 .burger-button-icon {
   display: block;
-  fill: var(--navy-blue);
+  fill: #2f2f37;
 }
 
 @media screen and (min-width: 768px) {
@@ -255,9 +255,9 @@ input {
   }
 
   .header-address-link {
-    padding: 24px 0;
     font-size: 16px;
     line-height: 1.5;
+    padding: 24px 0;
     letter-spacing: 0.02em;
   }
 }
@@ -476,7 +476,6 @@ input {
 }
 
 .team-list-item {
-  width: 100%;
   background-color: var(--white);
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
@@ -529,7 +528,7 @@ input {
 
 @media screen and (min-width: 1158px) {
   .team .container {
-    padding: 0 16px;
+    padding: 0 15px;
   }
 
   .team-list {
@@ -604,8 +603,8 @@ input {
   }
 
   .product-list-item {
-    box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08);
     width: calc((100% - 24px) / 2);
+    box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08);
   }
 }
 
@@ -616,8 +615,8 @@ input {
 
   .product-list-item {
     width: calc((100% - 2 * 24px) / 3);
-    box-shadow: none;
     cursor: pointer;
+    box-shadow: none;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -783,10 +782,6 @@ input {
   .footer-subscribe-title {
     text-align: left;
   }
-
-  .footer-subscribe-input {
-    box-shadow: none;
-  }
 }
 
 @media screen and (min-width: 1158px) {
@@ -817,7 +812,6 @@ input {
   .footer-subscribe-input {
     width: 264px;
     border: 1px solid var(--white);
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   }
 
   .footer-subscribe-input::placeholder {
@@ -832,7 +826,6 @@ input {
 /*MODAL*/
 
 .modal-overlay {
-  background-color: var(--navy-blue-modal);
   position: fixed;
   top: 0;
   left: 0;
@@ -842,6 +835,7 @@ input {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  background-color: var(--navy-blue-modal);
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -857,10 +851,10 @@ input {
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  width: 408px;
-  min-height: 584px;
+  width: 288px;
+  min-height: 623px;
   border-radius: 4px;
-  padding: 72px 24px 24px;
+  padding: 72px 16px 16px;
   background-color: var(--dairy);
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
@@ -883,8 +877,8 @@ input {
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-close-button:hover,
-.modal-close-button:focus {
+.modal-close-button:focus,
+.modal-close-button:active {
   background-color: var(--ocean);
   border: none;
 }
@@ -894,8 +888,8 @@ input {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-close-button:hover .modal-close-button-icon,
-.modal-close-button:focus .modal-close-button-icon {
+.modal-close-button:focus .modal-close-button-icon,
+.modal-close-button:active .modal-close-button-icon {
   fill: var(--white);
 }
 
@@ -905,7 +899,6 @@ input {
   letter-spacing: 0.02em;
   text-align: center;
   color: var(--navy-blue);
-  display: block;
   margin-bottom: 16px;
 }
 
@@ -938,10 +931,6 @@ input {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-input:focus {
-  border-color: var(--iris);
-}
-
 .modal-input-icon {
   position: absolute;
   fill: var(--navy-blue);
@@ -949,10 +938,6 @@ input {
   top: 50%;
   transform: translateY(-50%);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal-input:focus + .modal-input-icon {
-  fill: var(--iris);
 }
 
 .modal-comment-field {
@@ -975,10 +960,6 @@ input {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-comment:focus {
-  border-color: var(--iris);
-}
-
 .modal-comment::placeholder {
   color: rgba(46, 47, 66, 0.4);
 }
@@ -987,46 +968,54 @@ input {
   margin-bottom: 24px;
 }
 
-.modal-accept-text {
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.04em;
-  color: var(--light-slate);
+.modal-accept-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
 }
 
 .modal-accept-checker {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   width: 16px;
   height: 16px;
   border-radius: 2px;
   border: 1px solid var(--navy-blue-modal);
-  margin-right: 8px;
   fill: transparent;
-  cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-accept-input:checked + .modal-accept-text .modal-accept-checker {
+.modal-accept-input:checked + .modal-accept-label .modal-accept-checker {
   background-color: var(--ocean);
   border: none;
   fill: var(--cloud);
+}
+
+.modal-accept-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: var(--light-slate);
 }
 
 .modal-private-policy {
   line-height: 1.3;
   text-decoration: underline;
   text-decoration-skip-ink: none;
-  margin-left: 4px;
   color: var(--iris);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-private-policy:hover,
-.modal-private-policy:focus {
+.modal-private-policy:focus,
+.modal-private-policy:active {
   color: var(--ocean);
 }
 
@@ -1046,7 +1035,51 @@ input {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-submit-button:hover,
-.modal-submit-button:focus {
+.modal-submit-button:focus,
+.modal-submit-button:active {
   background-color: var(--ocean);
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    width: 408px;
+    min-height: 584px;
+  }
+
+  .modal-accept-text {
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .modal-close-button:hover {
+    background-color: var(--ocean);
+    border: none;
+  }
+
+  .modal-close-button:hover .modal-close-button-icon {
+    fill: var(--white);
+  }
+
+  .modal-input:focus {
+    border-color: var(--iris);
+  }
+
+  .modal-input:focus + .modal-input-icon {
+    fill: var(--iris);
+  }
+
+  .modal-comment:focus {
+    border-color: var(--iris);
+  }
+
+  .modal-private-policy:hover {
+    color: var(--ocean);
+  }
+
+  .modal-submit-button:hover {
+    background-color: var(--ocean);
+  }
 }

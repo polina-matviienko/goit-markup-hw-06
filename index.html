@@ -600,7 +600,7 @@
       </div>
     </footer>
 
-    <div class="modal-overlay">
+    <div class="modal-overlay is-open">
       <div class="modal">
         <button type="button" class="modal-close-button">
           <svg class="modal-close-button-icon" width="8" height="8">
@@ -678,14 +678,17 @@
               value="true"
               required
             />
-            <label class="modal-accept-text" for="user-privacy"
-              ><span class="modal-accept-checker">
+            <label class="modal-accept-label" for="user-privacy">
+              <span class="modal-accept-checker">
                 <svg class="box-checker" width="10" height="8">
                   <use href="./images/icons.svg#icon-check-mark"></use>
                 </svg>
               </span>
-              I accept the terms and conditions of the
-              <a href="" class="modal-private-policy">Privacy Policy</a>
+
+              <span class="modal-accept-text">
+                I accept the terms and conditions of the
+                <a href="#" class="modal-private-policy">Privacy Policy</a>
+              </span>
             </label>
           </div>
 
