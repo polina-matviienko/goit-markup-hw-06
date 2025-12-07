@@ -290,7 +290,16 @@ input {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: linear-gradient(to bottom, var(--grey), var(--grey)),
-    url('../images/people-office.jpg');
+    url('../images/1x/people-office-1x.jpg');
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(to bottom, var(--grey), var(--grey)),
+      url('../images/2x/people-office-2x.jpg');
+  }
 }
 
 .hero .container {
